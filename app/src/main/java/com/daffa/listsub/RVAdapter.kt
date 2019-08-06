@@ -1,12 +1,16 @@
 package com.daffa.listsub
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.list_item.view.*
 
-class RVAdapter(context: Context?, private val data: List<DataModel>) : RecyclerView.Adapter<ListHolder>(){
+class RVAdapter(context: Context?, private val data: ArrayList<DataModel>) : RecyclerView.Adapter<ListHolder>() {
     private val mContext = context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListHolder {
         return ListHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item,parent,false))
@@ -20,11 +24,29 @@ class RVAdapter(context: Context?, private val data: List<DataModel>) : Recycler
 }
 
 class ListHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-    private val tvEx = itemView.tvEx
+    private val tvSeri = itemView.tvTitle
+    private val tvAddress = itemView.tvAddress
+    private val tvDesc = itemView.tvDesc
+    private val ivPost = itemView.ivList
+    private val item = itemView.itemContent
 
     fun bindData(context: Context?, data: DataModel){
         context?.let {
+            Glide.with(context)
+                .load(data.image)
+                .error(R.drawable.err)
+                .centerCrop()
+                .into(ivPost)
+            tvSeri.text = data.seri
+            tvAddress.text = data.cpu
+            tvDesc.text = data.graphics
+        }
 
+        item.setOnClickListener {
+            val intent = Intent(context, Detail::class.java)
+            intent.putExtra("data", data)
+            context?.startActivity(intent)
         }
     }
+
 }

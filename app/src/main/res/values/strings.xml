@@ -2,4 +2,19 @@
     <string name="app_name">ListSub</string>
     <string name="image">Post</string>
     <string name="about">about</string>
+    <string name="cpu">CPU</string>
+    <string name="os">Operating System</string>
+    <string name="display">Display</string>
+    <string name="graphics">Graphics</string>
+    <string name="chipset">Chipset</string>
+    <string name="connectivity">Connectivity</string>
+    <string name="ac_adapter">AC Adapter</string>
+    <string name="memory">Memory</string>
+    <string name="drive">Drive</string>
+    <string name="web_cam">Web Cam</string>
+    <string name="keyboard">Keyboard</string>
+    <string name="audio_jack">Audio Jack</string>
+    <string name="port">Port</string>
+    <string name="dimension">Dimension</string>
+    <string name="official">Official</string>
 </resources>
