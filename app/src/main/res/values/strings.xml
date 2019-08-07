@@ -17,4 +17,10 @@
     <string name="port">Port</string>
     <string name="dimension">Dimension</string>
     <string name="official">Official</string>
+    <string name="name">Daffa Stefian</string>
+    <string name="address">Klaten, Jawa Tengah</string>
+    <string name="email">Email</string>
+    <string name="email_acc">daffastef14n@gmail.com</string>
+    <string name="other">Other</string>
+    <string name="git">github.com/daffastefian</string>
 </resources>

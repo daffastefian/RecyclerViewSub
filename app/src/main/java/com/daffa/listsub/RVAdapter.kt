@@ -2,7 +2,6 @@ package com.daffa.listsub
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,10 +23,10 @@ class RVAdapter(context: Context?, private val data: ArrayList<DataModel>) : Rec
 }
 
 class ListHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-    private val tvSeri = itemView.tvTitle
-    private val tvAddress = itemView.tvAddress
-    private val tvDesc = itemView.tvDesc
-    private val ivPost = itemView.ivList
+    private val tvSeri = itemView.tvSeri
+    private val tvCpu = itemView.tvCpu
+    private val tvGraphic = itemView.tvGraphic
+    private val ivPost = itemView.ivPost
     private val item = itemView.itemContent
 
     fun bindData(context: Context?, data: DataModel){
@@ -38,8 +37,8 @@ class ListHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
                 .centerCrop()
                 .into(ivPost)
             tvSeri.text = data.seri
-            tvAddress.text = data.cpu
-            tvDesc.text = data.graphics
+            tvCpu.text = data.cpu
+            tvGraphic.text = data.graphics
         }
 
         item.setOnClickListener {

@@ -17,13 +17,16 @@ class Detail : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
         data = intent.getSerializableExtra("data") as DataModel
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Specification"
         initLayout()
 
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item?.itemId
-        if (id == R.id.home) onBackPressed()
+        if (id == android.R.id.home) {
+            onBackPressed()
+        }
         return super.onOptionsItemSelected(item)
     }
 
